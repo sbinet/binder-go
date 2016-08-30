@@ -1,0 +1,26 @@
+from andrewosh/binder-base
+maintainer Sebastien Binet <binet@cern.ch>
+
+user root
+
+# install Go
+run apt-get update -y
+run apt-get install -y curl git
+run curl -O -L https://golang.org/dl/go1.7.linux-amd64.tar.gz
+run tar -C /usr/local -zxf /home/main/go1.7.linux-amd64.tar.gz
+
+user main
+
+run mkdir $HOME/gopath
+env PATH /usr/local/go/bin:$PATH
+env GOPATH $HOME/gopath
+env PATH $GOPATH/bin:$PATH
+
+run go get golang.org/x/tools/cmd/goimports
+run go get -tags zmq_4_x github.com/gopherds/gophernotes
+
+# install the Go kernel
+run mkdir -p $HOME/.ipython/kernels
+run cp -r $GOPATH/src/github.com/gopherds/gophernotes/kernel $HOME/.ipython/kernels/gophernotes
+
+
