@@ -16,6 +16,7 @@ env PATH /usr/local/go/bin:$PATH
 env GOPATH $HOME/gopath
 env PATH $GOPATH/bin:$PATH
 
+run mkdir -p "$GOPATH/src" "$GOPATH/bin" && chmod -R 777 "$GOPATH"
 run go get golang.org/x/tools/cmd/goimports
 run go get github.com/gopherds/gophernotes
 
