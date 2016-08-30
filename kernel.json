@@ -1,6 +1,6 @@
 {
     "argv": [
-        "/home/main/gopath/bin/gophernotes", 
+        "gophernotes",
         "{connection_file}"
         ],
     "display_name": "Go",
