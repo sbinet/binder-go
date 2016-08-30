@@ -23,4 +23,6 @@ run go get github.com/gopherds/gophernotes
 run mkdir -p $HOME/.ipython/kernels
 run cp -r $GOPATH/src/github.com/gopherds/gophernotes/kernel $HOME/.ipython/kernels/gophernotes
 
-
+# add an example
+run mkdir $HOME/notebooks
+copy ./notebooks/index.ipynb notebooks/.
