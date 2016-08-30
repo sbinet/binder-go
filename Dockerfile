@@ -27,4 +27,4 @@ copy ./kernel.json $HOME/.ipython/kernels/gophernotes/.
 
 # add an example
 run mkdir $HOME/notebooks
-copy ./notebooks/index.ipynb notebooks/.
+copy ./notebooks/* notebooks/.
