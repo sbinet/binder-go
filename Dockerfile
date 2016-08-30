@@ -5,7 +5,7 @@ user root
 
 # install Go
 run apt-get update -y
-run apt-get install -y curl git
+run apt-get install -y curl git pkg-config libzmq-dev build-essential
 run curl -O -L https://golang.org/dl/go1.7.linux-amd64.tar.gz
 run tar -C /usr/local -zxf /home/main/go1.7.linux-amd64.tar.gz
 
@@ -17,7 +17,7 @@ env GOPATH $HOME/gopath
 env PATH $GOPATH/bin:$PATH
 
 run go get golang.org/x/tools/cmd/goimports
-run go get -tags zmq_4_x github.com/gopherds/gophernotes
+run go get github.com/gopherds/gophernotes
 
 # install the Go kernel
 run mkdir -p $HOME/.ipython/kernels
